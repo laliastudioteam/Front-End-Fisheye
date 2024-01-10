@@ -38,9 +38,16 @@ h1 {
     align-items: center;
     flex-direction: column;
     padding:20px;
-  
     min-width:350px;
     transition: all 0.10s ease-in-out;
+}
+
+.photographer_section article a{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: column;
+    text-decoration:none;
 }
 
 
@@ -62,11 +69,11 @@ transform: scale(1.20) translateY(-20px);
     font-weight:400;
     margin-bottom:5px;
     transition: all 0.5s ease-in-out;
+ 
 }
 
 .photographer_section article:hover h2 {
    transform: translateY(-20px) scale(1.10);
- 
     }
     
 
