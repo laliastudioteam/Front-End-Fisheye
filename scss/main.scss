@@ -1,2 +1,13 @@
-
+/*Fichier paramètres globaux*/
 @import "./base/normalize";
+
+/*Fichier de cards*/
+@import "./components/article" ;
+@import "./components/button" ;
+@import "./components/form" ;
+@import "./components/header" ;
+@import "./components/modal" ;
+@import "./components/filter" ;
+
+/*Fichier de photographer*/
+@import "./layouts/photographer" ;
