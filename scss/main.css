@@ -266,16 +266,55 @@ form input {
   font-size: 10px;
 }
 
+.container-media {
+  margin: 0 100px;
+}
+
 .photograph-media {
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .container-price {
   position: fixed;
   bottom: 0px;
+  right: 20px;
+  border-radius: 5px;
+  background-color: #DB8876;
+  width: 300px;
+  height: 59px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 25px;
+  font-size: 24px;
+}
+
+.container-price__like {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container-price__like__text {
+  display: flex;
+  align-items: center;
+}
+
+.container-price__like__icon {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.container-price__price {
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .card-media {
@@ -283,7 +322,7 @@ form input {
   background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
-  width: 400px;
+  width: 350px;
 }
 
 .card-media__header img {
@@ -317,4 +356,57 @@ form input {
   display: flex;
   align-items: center;
   vertical-align: center;
+}
+
+.lightbox {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  display: none;
+}
+
+.container-lightbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+}
+
+.lightbox-zone-image {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.lightbox-zone-left {
+  width: 20%;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-zone-right {
+  width: 20%;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  width: 90%;
+  height: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 40px;
 }/*# sourceMappingURL=main.css.map */

@@ -67,8 +67,13 @@ function photographerUniqtemplate(data) {
 		containerHeader.appendChild(divButton);
 
 		const divPicture = document.createElement("div");
+        if(portrait!=="undefined"){
 		const picturePortrait = document.createElement("img");
 		picturePortrait.setAttribute("src", picture);
+        }else{
+            const picturePortrait = document.createElement("div");
+		picturePortrait.textContent="video";
+        }
 
 		containerHeader.appendChild(divPicture);
 		divPicture.appendChild(picturePortrait);
@@ -87,6 +92,9 @@ function photographerMediatemplate(data) {
 	function getUserMediaDOM() {
 		const cardPhotograph = document.createElement("div");
         cardPhotograph.classList.add("card-media");
+        const lienCardPhotographer = document.createElement("a");
+        lienCardPhotographer.setAttribute("href", "#");
+        lienCardPhotographer.classList.add("card-media__lien");
         const cardPhotographHeader = document.createElement("div");
         cardPhotographHeader.classList.add("card-media__header");
         const imageHeader = document.createElement("img");
@@ -107,7 +115,8 @@ function photographerMediatemplate(data) {
         cardphotographLikesIcon.classList.add("fa-heart");
         cardphotographLikesIcon.setAttribute("id", "likes-icon-"+id);
         imageHeader.setAttribute("src", picture);
-        cardPhotograph.appendChild(cardPhotographHeader);
+        cardPhotograph.appendChild(lienCardPhotographer);
+        lienCardPhotographer.appendChild(cardPhotographHeader);
         cardPhotographHeader.appendChild(imageHeader);
         cardPhotograph.appendChild(cardPhotographBody);
         cardPhotographBody.appendChild(cardPhotographLegend);

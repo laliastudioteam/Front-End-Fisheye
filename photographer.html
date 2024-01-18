@@ -9,7 +9,10 @@
 			href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap"
 			rel="stylesheet"
 		/>
-    <script src="https://kit.fontawesome.com/8aa73fb75e.js" crossorigin="anonymous"></script>
+		<script
+			src="https://kit.fontawesome.com/8aa73fb75e.js"
+			crossorigin="anonymous"
+		></script>
 		<title>Fisheye - photographe</title>
 	</head>
 	<body>
@@ -19,12 +22,38 @@
 			/></a>
 		</header>
 		<main id="main" aria-label="Contenu principal">
+			<div class="lightbox">
+        <div class="container-lightbox">
+        <div class="lightbox-close"><a href="#" class="lightbox-close-link"><i class="fa-solid fa-xmark"></i></a></div>
+        <div class="lightbox-zone-left">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+				<div class="lightbox-zone-image">
+					<img src="assets/medias/82/Art_Mine.jpg" class="lightbox-img" />
+					<div class="lightbox-legend">test de legende</div>
+        </div>
+        <div class="lightbox-zone-right">
+          <i class="fa-solid fa-arrow-right"></i>
+        </div>
+				</div>
+        </div>
+      </div>
+			</div>
+
 			<div class="photograph-header"></div>
 			<div class="filter-zone">Trier par :</div>
-			<div class="photographer_section"></div>
-			<div class="photograph-media"></div>
-
-			<div class="container-price">300€/jour</div>
+			<div class="container-media">
+				<div class="photograph-media"></div>
+			</div>
+			<div class="container-price">
+				<div class="container-price__like">
+					<div class="container-price__like__text"></div>
+					<div class="container-price__like__icon">
+						<i class="fa-solid fa-heart"></i>
+					</div>
+				</div>
+				<div class="container-price__price"></div>
+			</div>
 		</main>
 		<div id="contact_modal">
 			<div class="modal">
