@@ -22,6 +22,7 @@ async function getPhotographers() {
 			portrait: "account.png",
 		},
 	];
+	
 // GO Fetch real user data
 	const reponse = await fetch("./data/photographers.json");
 	const photographers = await reponse.json();

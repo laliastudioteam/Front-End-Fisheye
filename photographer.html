@@ -16,32 +16,66 @@
 		<title>Fisheye - photographe</title>
 	</head>
 	<body>
+		<div class="lightbox">
+			<div class="lightbox-close lightbox-arrow-close-nav">
+				<a href="#" class="lightbox-close-link">
+				<i class="fa-solid fa-xmark"></i>
+			</a></div>
+			<div class="container-lightbox">
+			
+			<div class="lightbox-zone-left" id="prevPicture">
+			  <i class="fa-solid fa-chevron-left lightbox-arrow-close-nav" ></i>
+			</div>
+					<div class="lightbox-zone-image">
+						<img src="assets/medias/82/Art_Mine.jpg" class="lightbox-img" />
+						<div class="lightbox-legend" id="legendPicture"></div>
+			</div>
+			<div class="lightbox-zone-video">
+				<video controls  class="lightbox-vid">
+					<source src="/media/cc0-videos/flower.mp4" type="video/mp4" class="ligthbox-vid-source"/>
+				  </video>
+				<div class="lightbox-legend" id="legendVideo"></div>
+	</div>
+			<div class="lightbox-zone-right lightbox-arrow-close-nav" id="nextPicture">
+			  <i class="fa-solid fa-chevron-right" ></i>
+			</div>
+					</div>
+			</div>
 		<header aria-label="Haut du site">
 			<a href="./"
 				><img src="assets/images/logo.png" class="logo" alt="fisheye logo"
 			/></a>
 		</header>
+
+		
 		<main id="main" aria-label="Contenu principal">
-			<div class="lightbox">
-        <div class="container-lightbox">
-        <div class="lightbox-close"><a href="#" class="lightbox-close-link"><i class="fa-solid fa-xmark"></i></a></div>
-        <div class="lightbox-zone-left">
-          <i class="fa-solid fa-arrow-left"></i>
-        </div>
-				<div class="lightbox-zone-image">
-					<img src="assets/medias/82/Art_Mine.jpg" class="lightbox-img" />
-					<div class="lightbox-legend">test de legende</div>
-        </div>
-        <div class="lightbox-zone-right">
-          <i class="fa-solid fa-arrow-right"></i>
-        </div>
-				</div>
-        </div>
-      </div>
-			</div>
 
 			<div class="photograph-header"></div>
-			<div class="filter-zone">Trier par :</div>
+			<div class="filter-zone">Trier par :
+
+				<details class="select-custom-select">
+					<summary class="select-radios">
+					  <input type="radio" name="filter" id="popularite" title="Popularité" class="selectFilterOption" checked>
+					  <input type="radio" name="filter" id="date" title="Date" class="selectFilterOption">
+					  <input type="radio" name="filter" id="titre" title="Titre" class="selectFilterOption">
+					</summary>
+					<ul class="select-list-select">
+					  <li>
+						<label class="select-label" for="popularite">
+						Popularité
+						  <span></span>
+						</label>
+					  </li>
+					  <li>
+						<label class="select-label" for="date">Date</label>
+					  </li>
+					  <li>
+						<label class="select-label" for="titre">Titre</label>
+					  </li>
+					</ul>
+				  </details>
+				
+			</div>
 			<div class="container-media">
 				<div class="photograph-media"></div>
 			</div>
@@ -52,7 +86,7 @@
 						<i class="fa-solid fa-heart"></i>
 					</div>
 				</div>
-				<div class="container-price__price"></div>
+				<div class="container-price__price slideUp"></div>
 			</div>
 		</main>
 		<div id="contact_modal">

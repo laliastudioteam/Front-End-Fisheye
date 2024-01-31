@@ -32,7 +32,6 @@ function photographerTemplate(data) {
 	return {name, picture, getUserCardDOM};
 }
 
-
 function photographerUniqtemplate(data) {
 	const {name, portrait, city, country, tagline, price, id} = data[0];
 
@@ -41,7 +40,7 @@ function photographerUniqtemplate(data) {
 
 	function getUserHeaderDOM() {
 		const containerHeader = document.createElement("div");
-        containerHeader.classList.add("container-header");
+		containerHeader.classList.add("container-header");
 		const divText = document.createElement("div");
 		divText.classList.add("group-photographinfos");
 		const h2 = document.createElement("h2");
@@ -67,13 +66,9 @@ function photographerUniqtemplate(data) {
 		containerHeader.appendChild(divButton);
 
 		const divPicture = document.createElement("div");
-        if(portrait!=="undefined"){
+
 		const picturePortrait = document.createElement("img");
 		picturePortrait.setAttribute("src", picture);
-        }else{
-            const picturePortrait = document.createElement("div");
-		picturePortrait.textContent="video";
-        }
 
 		containerHeader.appendChild(divPicture);
 		divPicture.appendChild(picturePortrait);
@@ -84,48 +79,68 @@ function photographerUniqtemplate(data) {
 }
 
 function photographerMediatemplate(data) {
-    const {date,id,photographerId,title,image,likes,price,video} = data;
-    console.log(data);
-    console.log(date,id,title,image,likes,price,video);
-    const picture = `assets/medias/${photographerId}/${image}`;
+	const {date, id, photographerId, title, image, likes, price, video} = data;
+	console.log(data);
+	console.log(date, id, title, image, likes, price, video);
+	const picture = `assets/medias/${photographerId}/${image}`;
 
 	function getUserMediaDOM() {
 		const cardPhotograph = document.createElement("div");
-        cardPhotograph.classList.add("card-media");
-        const lienCardPhotographer = document.createElement("a");
-        lienCardPhotographer.setAttribute("href", "#");
-        lienCardPhotographer.classList.add("card-media__lien");
-        const cardPhotographHeader = document.createElement("div");
-        cardPhotographHeader.classList.add("card-media__header");
-        const imageHeader = document.createElement("img");
-        const cardPhotographBody = document.createElement("div");
-        cardPhotographBody.classList.add("card-media__body");
-        const cardPhotographLegend = document.createElement("div");
-        cardPhotographLegend.classList.add("card-media__body__legend");
-        cardPhotographLegend.textContent=title;
-        const cardPhotographLikes = document.createElement("div");
-        cardPhotographLikes.classList.add("card-media__body__likes");
-        const cardphotographLikesText = document.createElement("div");
-        cardphotographLikesText.classList.add("card-media__body__likes__text");
-        cardphotographLikesText.setAttribute("id", "likes-text-"+id);
-        cardphotographLikesText.textContent=likes;
-        const cardphotographLikesIcon = document.createElement("div");
-        cardphotographLikesIcon.classList.add("card-media__body__likes__icon");
-        cardphotographLikesIcon.classList.add("fa-solid");
-        cardphotographLikesIcon.classList.add("fa-heart");
-        cardphotographLikesIcon.setAttribute("id", "likes-icon-"+id);
-        imageHeader.setAttribute("src", picture);
-        cardPhotograph.appendChild(lienCardPhotographer);
-        lienCardPhotographer.appendChild(cardPhotographHeader);
-        cardPhotographHeader.appendChild(imageHeader);
-        cardPhotograph.appendChild(cardPhotographBody);
-        cardPhotographBody.appendChild(cardPhotographLegend);
-        cardPhotographBody.appendChild(cardPhotographLikes);
-        cardPhotographLikes.appendChild(cardphotographLikesText);
-        cardPhotographLikes.appendChild(cardphotographLikesIcon);
+		cardPhotograph.classList.add("card-media");
+		const lienCardPhotographer = document.createElement("a");
+		lienCardPhotographer.setAttribute("href", "#");
+		lienCardPhotographer.setAttribute("id", "card-media-img-" + id);
+		lienCardPhotographer.classList.add("card-media__lien");
+		const cardPhotographHeader = document.createElement("div");
+		cardPhotographHeader.classList.add("card-media__header");
 
-        console.log(cardPhotograph);
+		const cardPhotographBody = document.createElement("div");
+		cardPhotographBody.classList.add("card-media__body");
+		const cardPhotographLegend = document.createElement("div");
+		cardPhotographLegend.classList.add("card-media__body__legend");
+		cardPhotographLegend.textContent = title;
+		const cardPhotographLikes = document.createElement("div");
+		cardPhotographLikes.classList.add("card-media__body__likes");
+		const cardphotographLikesText = document.createElement("div");
+		cardphotographLikesText.classList.add("card-media__body__likes__text");
+		cardphotographLikesText.setAttribute("id", "likes-text-" + id);
+		cardphotographLikesText.textContent = likes;
+		const cardphotographLikesIcon = document.createElement("div");
+		cardphotographLikesIcon.classList.add("card-media__body__likes__icon");
+		cardphotographLikesIcon.setAttribute("id", "likes-icon-" + id);
+		cardphotographLikesIcon.classList.add("fa-solid");
+		cardphotographLikesIcon.classList.add("fa-heart");
+		cardphotographLikesIcon.setAttribute("id", "likes-icon-" + id);
+
+		cardPhotograph.appendChild(lienCardPhotographer);
+		lienCardPhotographer.appendChild(cardPhotographHeader);
+		if (image === undefined) {
+			const videoHeader = document.createElement("video");
+			videoHeader.setAttribute("tabIndex", 0);
+			videoHeader.setAttribute(
+				"src",
+				"assets/medias/" +
+				photographerId +
+					"/" +
+					video
+			);
+			videoHeader.load();
+			cardPhotographHeader.appendChild(videoHeader);
+
+		} else {
+			const imageHeader = document.createElement("img");
+			imageHeader.setAttribute("tabindex", 0);
+			imageHeader.setAttribute("src", picture);
+			cardPhotographHeader.appendChild(imageHeader);
+		}
+		cardPhotograph.appendChild(cardPhotographBody);
+		cardPhotographBody.appendChild(cardPhotographLegend);
+		cardPhotographBody.appendChild(cardPhotographLikes);
+		cardPhotographLikes.appendChild(cardphotographLikesText);
+		cardPhotographLikes.appendChild(cardphotographLikesIcon);
+
+		console.log(cardPhotograph);
 		return cardPhotograph;
 	}
-	return { title, getUserMediaDOM};
+	return {title, getUserMediaDOM};
 }
