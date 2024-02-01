@@ -16,6 +16,60 @@
 		<title>Fisheye - photographe</title>
 	</head>
 	<body>
+		<div id="contact_modal">
+			<div class="modal">
+				<header aria-label="Haut de la modal">
+					<h2>Contactez-moi</h2>
+					<img src="assets/photographers/EllieRoseWilkens.jpg" class="modal__picture">
+					<img
+						src="assets/icons/close.svg"
+						onclick="closeModal()"
+						alt="Fermer la modal"
+						class="modal__close"
+					/>
+				</header>
+				<form id="contact-form">
+<div class="container_form">
+					<div class="formData" data-error="Error" data-error-visible="false">
+						<label for="first">Prénom</label><br />
+						<input
+							class="text-control"
+							type="text"
+							id="first"
+							name="first"
+							minlength="2"
+						/><br />
+					</div>
+
+					<div class="formData" data-error="Error" data-error-visible="false">
+						<label for="last">Nom</label><br />
+						<input
+							class="text-control"
+							type="text"
+							id="last"
+							name="last"
+							minlength="2"
+						/><br />
+					</div>
+					<div class="formData" data-error="Error" data-error-visible="false">
+						<label for="email">E-mail</label><br />
+						<input
+							class="text-control"
+							type="email"
+							id="email"
+							name="email"
+							autocomplete="off"
+						/><br />
+					</div>
+					<div class="formData" data-error="Error" data-error-visible="false"></div>
+					<label for="email">Message</label><br />
+						<textarea name="message" id="message" rows="10"></textarea>
+				</div>
+					<button class="contact_button" type="submit">Envoyer</button>
+				</div>
+				</form>
+			</div>
+		</div>
 		<div class="lightbox">
 			<div class="lightbox-close lightbox-arrow-close-nav">
 				<a href="#" class="lightbox-close-link">
@@ -27,12 +81,12 @@
 			  <i class="fa-solid fa-chevron-left lightbox-arrow-close-nav" ></i>
 			</div>
 					<div class="lightbox-zone-image">
-						<img src="assets/medias/82/Art_Mine.jpg" class="lightbox-img" />
+						<img  class="lightbox-img" alt="" />
 						<div class="lightbox-legend" id="legendPicture"></div>
 			</div>
 			<div class="lightbox-zone-video">
-				<video controls  class="lightbox-vid">
-					<source src="/media/cc0-videos/flower.mp4" type="video/mp4" class="ligthbox-vid-source"/>
+				<video controls  class="lightbox-vid" alt="">
+					<source  type="video/mp4" class="ligthbox-vid-source"/>
 				  </video>
 				<div class="lightbox-legend" id="legendVideo"></div>
 	</div>
@@ -51,7 +105,8 @@
 		<main id="main" aria-label="Contenu principal">
 
 			<div class="photograph-header"></div>
-			<div class="filter-zone">Trier par :
+			<div class="filter-zone">
+			<div class="filter-zone__title">Trier par :</div>
 
 				<details class="select-custom-select">
 					<summary class="select-radios">
@@ -89,31 +144,7 @@
 				<div class="container-price__price slideUp"></div>
 			</div>
 		</main>
-		<div id="contact_modal">
-			<div class="modal">
-				<header aria-label="Haut de la modal">
-					<h2>Contactez-moi</h2>
-					<img
-						src="assets/icons/close.svg"
-						onclick="closeModal()"
-						alt="Fermer la modal"
-					/>
-				</header>
-				<form>
-					<div>
-						<label for="forename">Prénom</label>
-						<input name="forename" id="forename" />
-						<label for="lastname">Nom</label>
-						<input name="lastname" id="lastname" />
-						<label for="email">Email</label>
-						<input name="email" id="email" />
-						<label for="message">Votre message</label>
-						<textarea name="message" id="message" rows="10"></textarea>
-					</div>
-					<button class="contact_button" type="submit">Envoyer</button>
-				</form>
-			</div>
-		</div>
+		
 		<script src="/scripts/pages/photographer.js"></script>
 		<script src="/scripts/templates/photographer.js"></script>
 		<script src="/scripts/utils/contactForm.js"></script>

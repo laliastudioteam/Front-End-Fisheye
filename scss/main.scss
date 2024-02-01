@@ -1,7 +1,11 @@
-/*Fichier paramètres globaux*/
+/*Fichiers paramètres globaux*/
 @import "./base/normalize";
 
-/*Fichier de cards*/
+/*Fichiers utils*/
+@import "./utils/variables";
+@import "./utils/animations";
+
+/*Fichiers de composents*/
 @import "./components/article" ;
 @import "./components/button" ;
 @import "./components/form" ;
@@ -11,5 +15,5 @@
 @import "./components/lightbox";
 @import "./components/select";
 
-/*Fichier de photographer*/
+/*Fichiers de photographer*/
 @import "./layouts/photographer" ;

@@ -3,37 +3,65 @@
 
 #contact_modal {
     display: none;
-    position:absolute;
-    top:100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    top:0px;
     margin-left:auto;
     margin-right:auto;
-    width:50%;
+    width:100%;
+    height:100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
 }
 
 .modal {
+    margin-top:20%;
     border-radius: 5px;
-    background-color: #DB8876;
+    background-color: #fafafa;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 35px;
+    padding:25px;
+    position:relative;
     margin: auto;
-    border:15px solid red;
 }
 
 .modal header {
     justify-content: space-between;
     width: 100%;
+    background-color:#DB8876;
+    padding:10px;
+    color:white;
+    margin-bottom:35px;
 }
 
-.modal header img {
+.modal__picture{
+    width:170px;
+    height:170px;
+    object-fit: cover;
+    border:10px solid #fff;
+    border-radius:100px;
+    margin-right:20px;
+}
+.modal__close{
     cursor: pointer;
+    width:30px;
+    height:30px;
+    position:absolute;
+  right:-30px;
+    top:-30px;
+    background-color:#DB8876;
+    border-radius:50px;
+    padding:10px;
 }
 
 .modal header h2 {
-    font-size: 64px;
+    font-size:24px;
     font-weight: normal;
     text-align: center;
 }
+

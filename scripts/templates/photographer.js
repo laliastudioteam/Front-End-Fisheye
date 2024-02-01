@@ -87,18 +87,21 @@ function photographerMediatemplate(data) {
 	function getUserMediaDOM() {
 		const cardPhotograph = document.createElement("div");
 		cardPhotograph.classList.add("card-media");
+		cardPhotograph.style.animationDelay = Math.floor(Math.random() * 1000)+"ms";
 		const lienCardPhotographer = document.createElement("a");
 		lienCardPhotographer.setAttribute("href", "#");
 		lienCardPhotographer.setAttribute("id", "card-media-img-" + id);
 		lienCardPhotographer.classList.add("card-media__lien");
 		const cardPhotographHeader = document.createElement("div");
 		cardPhotographHeader.classList.add("card-media__header");
-
 		const cardPhotographBody = document.createElement("div");
 		cardPhotographBody.classList.add("card-media__body");
 		const cardPhotographLegend = document.createElement("div");
 		cardPhotographLegend.classList.add("card-media__body__legend");
 		cardPhotographLegend.textContent = title;
+		const cardPhotographDate = document.createElement("div");
+		cardPhotographDate.classList.add("card-media__body__date");
+		cardPhotographDate.textContent = date;
 		const cardPhotographLikes = document.createElement("div");
 		cardPhotographLikes.classList.add("card-media__body__likes");
 		const cardphotographLikesText = document.createElement("div");
@@ -117,6 +120,7 @@ function photographerMediatemplate(data) {
 		if (image === undefined) {
 			const videoHeader = document.createElement("video");
 			videoHeader.setAttribute("tabIndex", 0);
+			videoHeader.setAttribute("alt", title);
 			videoHeader.setAttribute(
 				"src",
 				"assets/medias/" +
@@ -126,20 +130,20 @@ function photographerMediatemplate(data) {
 			);
 			videoHeader.load();
 			cardPhotographHeader.appendChild(videoHeader);
-
 		} else {
 			const imageHeader = document.createElement("img");
 			imageHeader.setAttribute("tabindex", 0);
+			imageHeader.setAttribute("alt", title);
 			imageHeader.setAttribute("src", picture);
 			cardPhotographHeader.appendChild(imageHeader);
 		}
 		cardPhotograph.appendChild(cardPhotographBody);
 		cardPhotographBody.appendChild(cardPhotographLegend);
+		cardPhotographBody.appendChild(cardPhotographDate);
 		cardPhotographBody.appendChild(cardPhotographLikes);
 		cardPhotographLikes.appendChild(cardphotographLikesText);
 		cardPhotographLikes.appendChild(cardphotographLikesIcon);
 
-		console.log(cardPhotograph);
 		return cardPhotograph;
 	}
 	return {title, getUserMediaDOM};

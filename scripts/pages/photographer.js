@@ -3,7 +3,7 @@
 // Declaration de la constante des données du photographe
 let dataGlobalPhotographer = new Array();
 let dataGlobalPhotographerMedia = new Array();
-let indexMedia =0;
+let indexMedia = 0;
 
 async function getPhotographers() {
 	// GO Fetch real user data
@@ -47,6 +47,7 @@ async function displayMedia(mediaData) {
 		const photographerMediaModel = photographerMediatemplate(mediaData);
 		const userMediaDOM = photographerMediaModel.getUserMediaDOM();
 		photographerMediaSection.appendChild(userMediaDOM);
+		void photographerMediaSection.offsetWidth;
 	});
 }
 
@@ -104,6 +105,47 @@ async function initFilters() {
 
 	console.log("Ecouteurs filtres ok");
 }
+// Modal Button
+const modalButton = document.querySelector(".contact_button");
+
+modalButton.addEventListener("click", function (event) {
+	console.log("YOU CLICKED IT");
+	event.preventDefault();
+	submitForm();
+});
+
+function submitForm() {
+	const forenameInput = document.getElementById("forename");
+	const lastnameInput = document.getElementById("lastname");
+	const emailInput = document.getElementById("email");
+	const messageInput = document.getElementById("message");
+let errorsForm=0;
+
+// Fix error Variables
+const minFirst = 2;
+const minLast = 2;
+const checkById = [];
+
+// Empty error content
+const errorAlerts = {
+	first: [
+		"Le prénom contient des chiffres ou compte moins de " + minFirst+ " lettres",
+		checkFirst,
+	],
+	last: [
+		"Le nom contient des chiffres ou compte moins de " + minLast + " lettres",
+		checkLast,
+	],
+	email: ["L'email est de forme invalide", checkEmail],
+	message: ["Le message est vide", checkMessage],
+
+};
+
+
+
+
+
+}
 
 // Tri par filtre
 function sortMedia(type, arrayData) {
@@ -141,8 +183,10 @@ function lightboxSystem(media, id) {
 	const lightboxImg = document.querySelector(".lightbox-img");
 	const lightboxLegend = document.getElementById("legendPicture");
 	const lightboxVid = document.querySelector(".lightbox-vid");
+	const lightboxZoneVideo = document.querySelector(".lightbox-zone-video");
 	const lightboxVidSource = document.querySelector(".ligthbox-vid-source");
 	const lightboxVidLegend = document.getElementById("legendVideo");
+	const lightboxZoneImage = document.querySelector(".lightbox-zone-image");
 	const lengthMedia = media.length;
 	//console.log(lengthMedia);
 	let indexMedia = media.findIndex(s => s.id === Number(id));
@@ -179,12 +223,11 @@ function lightboxSystem(media, id) {
 	function changePictureVideo() {
 		console.log("change image");
 
-	
 		if (media[indexMedia].image === undefined) {
 			console.log("video");
 			lightbox.style.display = "block";
-			lightboxImg.style.display = "none";
-			lightboxVid.style.display = "block";
+			lightboxZoneImage.style.display = "none";
+			lightboxZoneVideo.style.display = "flex";
 			lightboxVidLegend.style.display = "block";
 			lightboxLegend.style.display = "none";
 			lightboxVidLegend.textContent = media[indexMedia].title;
@@ -195,13 +238,14 @@ function lightboxSystem(media, id) {
 					"/" +
 					media[indexMedia].video
 			);
+			lightboxVidSource.setAttribute("alt", media[indexMedia].title);
 			lightboxVid.load();
 			lightboxVid.play();
 		} else {
 			console.log("image");
 			lightbox.style.display = "block";
-			lightboxVid.style.display = "none";
-			lightboxImg.style.display = "block";
+			lightboxZoneVideo.style.display = "none";
+			lightboxZoneImage.style.display = "flex";
 			lightboxVidLegend.style.display = "none";
 			lightboxLegend.style.display = "block";
 			lightboxLegend.textContent = media[indexMedia].title;
@@ -218,6 +262,7 @@ function lightboxSystem(media, id) {
 					"/" +
 					media[indexMedia].image
 			);
+			lightboxImg.setAttribute("alt", media[indexMedia].title);
 			lightboxImg.classList.remove("animation-fadeOut");
 			lightboxImg.classList.add("animation-fadeIn");
 			void lightboxImg.offsetWidth;
@@ -230,6 +275,8 @@ function lightboxSystem(media, id) {
 			prevPicture();
 		} else if (e.keyCode === 39) {
 			nextPicture();
+		} else if (e.keyCode === 27) {
+			closeLightboxSystem();
 		}
 	});
 

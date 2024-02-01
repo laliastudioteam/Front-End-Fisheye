@@ -1,7 +1,7 @@
 /* Lightbox */
 
 .lightbox {
-    z-index:9999;
+    z-index:9997;
     position: fixed;
     height: 100vh;
     width: 100%;
@@ -22,6 +22,16 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    display:none;
+}
+
+.lightbox-zone-video {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display:none;
 }
 .lightbox-zone-left {
     width: 10%;
@@ -34,6 +44,7 @@
     transform-origin: 00% 50%;
     color: #901C1C;
     cursor: pointer;
+    z-index: 9998;
 }
 
 .lightbox-zone-left:hover {
@@ -53,6 +64,8 @@ transform: scale(1.15);
     transform-origin: 100% 50%;
     color: #901C1C;
     cursor: pointer;
+    z-index: 9998;
+
 }
 
 .lightbox-zone-right:hover {
