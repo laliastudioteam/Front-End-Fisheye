@@ -16,19 +16,20 @@
 		<title>Fisheye - photographe</title>
 	</head>
 	<body>
-		<div id="contact_modal">
+		<div id="contact_modal" role="dialog" aria-modal="true" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">
 			<div class="modal">
 				<header aria-label="Haut de la modal">
 					<h2>Contactez-moi</h2>
-					<img src="assets/photographers/EllieRoseWilkens.jpg" class="modal__picture">
+					<img class="modal__picture" title="photographer picture" alt="photographer picture">
 					<img
 						src="assets/icons/close.svg"
 						onclick="closeModal()"
 						alt="Fermer la modal"
 						class="modal__close"
+						aria-label="Fermer la modal"
 					/>
 				</header>
-				<form id="contact-form">
+				<form id="contact-form" aria-label="Contact informations">
 <div class="container_form">
 					<div class="formData" data-error="Error" data-error-visible="false">
 						<label for="first">Prénom</label><br />
@@ -61,24 +62,24 @@
 							autocomplete="off"
 						/><br />
 					</div>
-					<div class="formData" data-error="Error" data-error-visible="false"></div>
-					<label for="email">Message</label><br />
+					<div class="formData" data-error="Error" data-error-visible="false">
+					<label for="message">Message</label>
 						<textarea name="message" id="message" rows="10"></textarea>
 				</div>
-					<button class="contact_button" type="submit">Envoyer</button>
+					<button class="contact_button" type="submit"  aria-label="Envoyer">Envoyer</button>
 				</div>
 				</form>
 			</div>
 		</div>
-		<div class="lightbox">
+		<div class="lightbox" role="dialog" aria-label="Gallery">
 			<div class="lightbox-close lightbox-arrow-close-nav">
-				<a href="#" class="lightbox-close-link">
-				<i class="fa-solid fa-xmark"></i>
+				<a href="#" class="lightbox-close-link" aria-label="Fermer"  title="fermer" >
+				<i class="fa-solid fa-xmark" aria-hidden="true" alt="Fermer"></i>
 			</a></div>
 			<div class="container-lightbox">
 			
-			<div class="lightbox-zone-left" id="prevPicture">
-			  <i class="fa-solid fa-chevron-left lightbox-arrow-close-nav" ></i>
+			<div class="lightbox-zone-left" id="prevPicture" aria-label="Précédent media" title="Précédent media">
+			  <i class="fa-solid fa-chevron-left" ></i>
 			</div>
 					<div class="lightbox-zone-image">
 						<img  class="lightbox-img" alt="" />
@@ -90,15 +91,13 @@
 				  </video>
 				<div class="lightbox-legend" id="legendVideo"></div>
 	</div>
-			<div class="lightbox-zone-right lightbox-arrow-close-nav" id="nextPicture">
+			<div class="lightbox-zone-right " id="nextPicture" aria-label="Prochain media" title="Prochain media">
 			  <i class="fa-solid fa-chevron-right" ></i>
 			</div>
 					</div>
 			</div>
-		<header aria-label="Haut du site">
-			<a href="./"
-				><img src="assets/images/logo.png" class="logo" alt="fisheye logo"
-			/></a>
+		<header aria-label="Homepage">
+			<a href="./" aria-hidden="true" aria-label="fermer"><img src="assets/images/logo.png" class="logo" alt="fisheye logo"/></a>
 		</header>
 
 		

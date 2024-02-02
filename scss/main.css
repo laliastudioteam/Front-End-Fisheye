@@ -195,13 +195,18 @@ form .container_form {
   margin-bottom: 26px;
 }
 
+.formData {
+  width: 100%;
+  display: block;
+}
+
 form input {
   width: 100%;
   font-size: 20px;
-  padding: 10px;
-  height: 30px;
-  border: none;
+  height: 50px;
   border-radius: 5px;
+  border: 1px solid #DB8876;
+  margin: 0px 10px 20px 0px;
 }
 
 form textarea {
@@ -209,12 +214,34 @@ form textarea {
   height: 68px;
   border: none;
   border-radius: 5px;
+  border: 1px solid #DB8876;
 }
 
 form label {
   font-size: 20px;
+  padding: 0px;
   margin: 0;
-  padding: 0;
+}
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.6em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.formData[data-error-visible=true]::after {
+  opacity: 1;
+}
+
+.formData[data-error-visible=true] .text-control {
+  border: 2px solid #e54858;
 }
 
 /* Header */
@@ -226,10 +253,17 @@ form label {
   flex-direction: row;
   background-color: #FAFAFA;
   height: 300px;
-  margin: 0 100px;
+  margin: 0 50px;
   width: 100%;
 }
 
+@media screen and (max-width: 780px) {
+  .container-header {
+    height: 450px;
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+}
 /* Modal de formulaire */
 #contact_modal {
   display: none;
@@ -250,7 +284,7 @@ form label {
   margin-top: 20%;
   border-radius: 5px;
   background-color: #fafafa;
-  width: 50%;
+  width: 380px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -270,8 +304,8 @@ form label {
 }
 
 .modal__picture {
-  width: 170px;
-  height: 170px;
+  width: 150px;
+  height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
   border: 10px solid #fff;
@@ -567,6 +601,11 @@ input[type=radio]:after {
   margin: 0 100px;
 }
 
+@media screen and (max-width: 780px) {
+  .photograph-header {
+    height: 500px;
+  }
+}
 .photograph-header img {
   height: 200px;
   width: 200px;
@@ -758,4 +797,19 @@ input[type=radio]:after {
 
 .animation-fadeOut {
   animation: fadeOut 1s ease-in-out forwards;
+}
+
+.text-control {
+  margin: 0;
+  padding: 8px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 20px;
+  height: 48px;
+}
+
+input[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.6em;
+  color: red;
 }/*# sourceMappingURL=main.css.map */

@@ -9,6 +9,14 @@
     flex-direction: row;
     background-color: #FAFAFA;
     height: 300px;
-    margin: 0 100px;
+    margin: 0 50px;
     width:100%;
+}
+
+@media screen AND (max-width: 780px){
+    .container-header {
+height:450px;
+        flex-direction: column;
+       margin-bottom:50px;
+    }
 }

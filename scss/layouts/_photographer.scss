@@ -18,6 +18,14 @@
     margin: 0 100px;
 }
 
+@media screen AND (max-width: 780px){
+    .photograph-header {
+  
+        height: 500px;
+
+    }
+}
+
 .photograph-header img {
     height: 200px;
     width: 200px;
@@ -225,4 +233,19 @@
 
 .animation-fadeOut {
     animation: fadeOut 1s ease-in-out forwards;
+}
+
+.text-control {
+	margin: 0;
+	width: 100%;
+	border-radius: 8px;
+	font-size: 20px;
+	height: 48px;
+}
+
+
+input[data-error]::after {
+	content: attr(data-error);
+	font-size: 0.6em;
+	color: red;
 }

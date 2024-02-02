@@ -2,6 +2,9 @@ function photographerTemplate(data) {
 	const {name, portrait, city, country, tagline, price, id} = data;
 
 	const picture = `assets/photographers/${portrait}`;
+
+
+
 	console.log(picture);
 
 	function getUserCardDOM() {
@@ -37,6 +40,9 @@ function photographerUniqtemplate(data) {
 
 	const picture = `assets/photographers/${portrait}`;
 	console.log(picture);
+
+	const modalPicture=document.querySelector(".modal__picture");
+	modalPicture.setAttribute("src",picture);
 
 	function getUserHeaderDOM() {
 		const containerHeader = document.createElement("div");
@@ -114,13 +120,14 @@ function photographerMediatemplate(data) {
 		cardphotographLikesIcon.classList.add("fa-solid");
 		cardphotographLikesIcon.classList.add("fa-heart");
 		cardphotographLikesIcon.setAttribute("id", "likes-icon-" + id);
-
+		cardphotographLikesIcon.setAttribute("aria-label", "Liker");
 		cardPhotograph.appendChild(lienCardPhotographer);
 		lienCardPhotographer.appendChild(cardPhotographHeader);
 		if (image === undefined) {
 			const videoHeader = document.createElement("video");
 			videoHeader.setAttribute("tabIndex", 0);
 			videoHeader.setAttribute("alt", title);
+			videoHeader.setAttribute("aria-label", title);
 			videoHeader.setAttribute(
 				"src",
 				"assets/medias/" +
@@ -134,6 +141,7 @@ function photographerMediatemplate(data) {
 			const imageHeader = document.createElement("img");
 			imageHeader.setAttribute("tabindex", 0);
 			imageHeader.setAttribute("alt", title);
+			imageHeader.setAttribute("aria-label", title);
 			imageHeader.setAttribute("src", picture);
 			cardPhotographHeader.appendChild(imageHeader);
 		}
