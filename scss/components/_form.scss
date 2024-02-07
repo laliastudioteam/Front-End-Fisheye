@@ -1,50 +1,61 @@
-/* Form */ 
+/* Form */
 
-form {
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-form .container_form{
+.container-form {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: self-start;
     margin-bottom: 26px;
 }
-
-.formData{
-    width:100%;
-    display:block;
-}
-form input {
+.contact-form {
+    display: flex;
     width: 100%;
-    font-size:20px;
-    height:50px;
-    border-radius: 5px;
-    border:1px solid #DB8876;
-    margin:0px 10px 20px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        &__legend {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
 }
 
-form textarea {
+.formData {
     width: 100%;
-    height: 68px;
-    border: none;
-    border-radius: 5px;
-    border:1px solid #DB8876;
-}
+    display: block;
 
-form label {
-font-size:20px;
-padding:0px;
-margin:0;
+    &__input {
+        width: 100%;
+        font-size: 20px;
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid #db8876;
+        margin: 0px 10px 20px 0px;
     }
 
-    .formData[data-error]::after {
+    &__textarea {
+        width: 100%;
+        height: 68px;
+        border: none;
+        border-radius: 5px;
+        border: 1px solid #db8876;
+    }
+
+    &__label {
+        font-size: 20px;
+        padding: 0px;
+        margin: 0;
+    }
+
+    &[data-error]::after {
         content: attr(data-error);
-        font-size: 0.6em;
+        font-size: 0.8em;
         color: #e54858;
         display: block;
         margin-top: 7px;
@@ -54,9 +65,11 @@ margin:0;
         opacity: 0;
         transition: 0.3s;
     }
-    .formData[data-error-visible="true"]::after {
+    &[data-error-visible="true"]::after {
         opacity: 1;
     }
-    .formData[data-error-visible="true"] .text-control {
+    &[data-error-visible="true"] .text-control {
         border: 2px solid #e54858;
     }
+}
+

@@ -13,6 +13,7 @@ function photographerTemplate(data) {
 		lien.setAttribute("href", "./photographer.html?id=" + id);
 		const img = document.createElement("img");
 		img.setAttribute("src", picture);
+		img.setAttribute("alt", "Photo de "+name);
 		const h2 = document.createElement("h2");
 		h2.textContent = name;
 		const geographicZone = document.createElement("span");
@@ -39,17 +40,17 @@ function photographerUniqtemplate(data) {
 	const {name, portrait, city, country, tagline, price, id} = data[0];
 
 	const picture = `assets/photographers/${portrait}`;
-	console.log(picture);
 
 	const modalPicture=document.querySelector(".modal__picture");
 	modalPicture.setAttribute("src",picture);
+	modalPicture.setAttribute("alt", name);
 
 	function getUserHeaderDOM() {
 		const containerHeader = document.createElement("div");
 		containerHeader.classList.add("container-header");
 		const divText = document.createElement("div");
 		divText.classList.add("group-photographinfos");
-		const h2 = document.createElement("h2");
+		const h2 = document.createElement("h1");
 		h2.textContent = name;
 		const geographicZone = document.createElement("span");
 		geographicZone.classList.add("geographic");
@@ -76,6 +77,8 @@ function photographerUniqtemplate(data) {
 		const picturePortrait = document.createElement("img");
 		picturePortrait.setAttribute("src", picture);
 
+		picturePortrait.setAttribute("alt", name);
+
 		containerHeader.appendChild(divPicture);
 		divPicture.appendChild(picturePortrait);
 
@@ -98,6 +101,7 @@ function photographerMediatemplate(data) {
 		lienCardPhotographer.setAttribute("href", "#");
 		lienCardPhotographer.setAttribute("id", "card-media-img-" + id);
 		lienCardPhotographer.classList.add("card-media__lien");
+		lienCardPhotographer.setAttribute("aria-label","Voir le media "+ title);
 		const cardPhotographHeader = document.createElement("div");
 		cardPhotographHeader.classList.add("card-media__header");
 		const cardPhotographBody = document.createElement("div");

@@ -133,12 +133,12 @@ h1 {
 .photographer_section article .tagline {
   color: #000000;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 14px;
   transition: all 0.5s ease-in-out;
 }
 
 .photographer_section article:hover .tagline {
-  transform: scale(1.7);
+  transform: scale(1.3);
 }
 
 .photographer_section article:hover .tagline:before {
@@ -152,7 +152,7 @@ h1 {
 .photographer_section article .price {
   color: #757575;
   font-weight: 400;
-  font-size: 9px;
+  font-size: 12px;
   transition: all 0.5s ease-in-out;
   border: 1px solid transparent;
   border-radius: 10px;
@@ -179,71 +179,6 @@ h1 {
   cursor: pointer;
 }
 
-/* Form */
-form {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-form .container_form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: self-start;
-  margin-bottom: 26px;
-}
-
-.formData {
-  width: 100%;
-  display: block;
-}
-
-form input {
-  width: 100%;
-  font-size: 20px;
-  height: 50px;
-  border-radius: 5px;
-  border: 1px solid #DB8876;
-  margin: 0px 10px 20px 0px;
-}
-
-form textarea {
-  width: 100%;
-  height: 68px;
-  border: none;
-  border-radius: 5px;
-  border: 1px solid #DB8876;
-}
-
-form label {
-  font-size: 20px;
-  padding: 0px;
-  margin: 0;
-}
-
-.formData[data-error]::after {
-  content: attr(data-error);
-  font-size: 0.6em;
-  color: #e54858;
-  display: block;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  text-align: right;
-  line-height: 0.3;
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.formData[data-error-visible=true]::after {
-  opacity: 1;
-}
-
-.formData[data-error-visible=true] .text-control {
-  border: 2px solid #e54858;
-}
-
 /* Header */
 .container-header {
   justify-self: center;
@@ -261,7 +196,7 @@ form label {
   .container-header {
     height: 450px;
     flex-direction: column;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
   }
 }
 /* Modal de formulaire */
@@ -581,6 +516,75 @@ input[type=radio]:after {
   border-radius: 3px;
 }
 
+/* Form */
+.container-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: self-start;
+  margin-bottom: 26px;
+}
+
+.contact-form {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.contact-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.contact-form__fieldset__legend {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.formData {
+  width: 100%;
+  display: block;
+}
+.formData__input {
+  width: 100%;
+  font-size: 20px;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid #db8876;
+  margin: 0px 10px 20px 0px;
+}
+.formData__textarea {
+  width: 100%;
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #db8876;
+}
+.formData__label {
+  font-size: 20px;
+  padding: 0px;
+  margin: 0;
+}
+.formData[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.8em;
+  color: #e54858;
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: right;
+  line-height: 0.3;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible=true]::after {
+  opacity: 1;
+}
+.formData[data-error-visible=true] .text-control {
+  border: 2px solid #e54858;
+}
+
 /*Fichiers de photographer*/
 /* Photographer */
 .photographer_section {
@@ -628,7 +632,7 @@ input[type=radio]:after {
 .photograph-header .tagline {
   color: #000000;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .container-media {
@@ -801,7 +805,6 @@ input[type=radio]:after {
 
 .text-control {
   margin: 0;
-  padding: 8px;
   width: 100%;
   border-radius: 8px;
   font-size: 20px;

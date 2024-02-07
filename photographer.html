@@ -29,12 +29,15 @@
 						aria-label="Fermer la modal"
 					/>
 				</header>
-				<form id="contact-form" aria-label="Contact informations">
+		
 <div class="container_form">
+	<form id="contact-form" aria-label="Informations de contact">
+		<fieldset class="contact-form__fieldset">
+		<legend class="contact-form__fieldset__legend">Remplissez les champs ci-dessous : </legend>
 					<div class="formData" data-error="Error" data-error-visible="false">
 						<label for="first">Prénom</label><br />
 						<input
-							class="text-control"
+							class="text-control formData__input"
 							type="text"
 							id="first"
 							name="first"
@@ -45,7 +48,7 @@
 					<div class="formData" data-error="Error" data-error-visible="false">
 						<label for="last">Nom</label><br />
 						<input
-							class="text-control"
+							class="text-control formData__input"
 							type="text"
 							id="last"
 							name="last"
@@ -53,9 +56,9 @@
 						/><br />
 					</div>
 					<div class="formData" data-error="Error" data-error-visible="false">
-						<label for="email">E-mail</label><br />
+						<label for="email" class="formData__">E-mail</label><br />
 						<input
-							class="text-control"
+							class="text-control formData__input"
 							type="email"
 							id="email"
 							name="email"
@@ -64,17 +67,18 @@
 					</div>
 					<div class="formData" data-error="Error" data-error-visible="false">
 					<label for="message">Message</label>
-						<textarea name="message" id="message" rows="10"></textarea>
+						<textarea name="message" id="message" rows="10" class="formData__textarea"></textarea>
 				</div>
 					<button class="contact_button" type="submit"  aria-label="Envoyer">Envoyer</button>
 				</div>
+				</fieldset>
 				</form>
 			</div>
 		</div>
 		<div class="lightbox" role="dialog" aria-label="Gallery">
 			<div class="lightbox-close lightbox-arrow-close-nav">
-				<a href="#" class="lightbox-close-link" aria-label="Fermer"  title="fermer" >
-				<i class="fa-solid fa-xmark" aria-hidden="true" alt="Fermer"></i>
+				<a href="#" class="lightbox-close-link"   title="fermer" >
+				<i class="fa-solid fa-xmark" aria-hidden="true" alt="Fermer" aria-label="Fermer"></i>
 			</a></div>
 			<div class="container-lightbox">
 			
@@ -98,9 +102,7 @@
 			</div>
 		<header aria-label="Homepage">
 			<a href="./" aria-hidden="true" aria-label="fermer"><img src="assets/images/logo.png" class="logo" alt="fisheye logo"/></a>
-		</header>
-
-		
+		</header>		
 		<main id="main" aria-label="Contenu principal">
 
 			<div class="photograph-header"></div>
@@ -147,5 +149,6 @@
 		<script src="/scripts/pages/photographer.js"></script>
 		<script src="/scripts/templates/photographer.js"></script>
 		<script src="/scripts/utils/contactForm.js"></script>
+		<script src="/scripts/utils/lightBox.js"></script>
 	</body>
 </html>
