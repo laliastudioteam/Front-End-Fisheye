@@ -35,7 +35,7 @@
         font-size: 20px;
         height: 50px;
         border-radius: 5px;
-        border: 1px solid #db8876;
+        border: 1px solid $color1;
         margin: 0px 10px 20px 0px;
     }
 
@@ -44,7 +44,7 @@
         height: 68px;
         border: none;
         border-radius: 5px;
-        border: 1px solid #db8876;
+        border: 1px solid $color1;
     }
 
     &__label {

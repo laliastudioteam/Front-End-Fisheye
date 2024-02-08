@@ -69,14 +69,14 @@
 
     &__legend {
         font-size: $font-size-legend;
-        color: #901c1c;
+        color: $color2;
     }
     &__likes {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         font-size: $font-size-legend;
-        color: #901c1c;
+        color: $color2;
 
         &__icon {
             padding-left: 10px;

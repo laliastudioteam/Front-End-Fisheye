@@ -16,7 +16,7 @@
     padding: 1rem;
     cursor: pointer;
     border-radius: 5px;
-    background-color: #901C1C;
+    background-color: $color2;
     list-style: none;
     color:white;
   }
@@ -61,7 +61,7 @@
   
   .select-list-select {
     width: 100%;
-    background: #901C1C;
+    background: $color2;
     position: absolute;
     top: calc(100% + .5rem);
     left: 0;

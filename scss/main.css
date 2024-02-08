@@ -116,7 +116,7 @@ h1 {
   transition: all 0.5s ease-in-out;
 }
 .photograph-article__geographic {
-  color: #901c1c;
+  color: #901C1C;
   transition: all 0.5s ease-in-out;
 }
 .photograph-article__tagline {
@@ -233,14 +233,14 @@ h1 {
 }
 .card-media__body__legend {
   font-size: 20px;
-  color: #901c1c;
+  color: #901C1C;
 }
 .card-media__body__likes {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   font-size: 20px;
-  color: #901c1c;
+  color: #901C1C;
 }
 .card-media__body__likes__icon {
   padding-left: 10px;
@@ -719,7 +719,7 @@ input[type=radio]:after {
 }
 
 .photograph-header .geographic {
-  color: #901c1c;
+  color: #901C1C;
 }
 
 .photograph-header .tagline {

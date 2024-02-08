@@ -41,7 +41,7 @@
 }
 
 .photograph-header .geographic {
-    color: #901c1c;
+    color: $color2;
 }
 
 .photograph-header .tagline {
@@ -65,7 +65,7 @@
     bottom: 0px;
     right: 20px;
     border-radius: 5px;
-    background-color: #db8876;
+    background-color: $color1;
     width: 300px;
     height: 59px;
     display: flex;
@@ -98,7 +98,7 @@
 
                 &__::after {
                     content: "+1";
-                    background: #db8876;
+                    background: $color1;
                     padding: 5px;
                     border-radius: 50px;
                     position: absolute;

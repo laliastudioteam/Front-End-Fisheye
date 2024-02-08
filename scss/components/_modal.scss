@@ -30,7 +30,7 @@
     &__header {
         justify-content: space-between;
         width: 100%;
-        background-color: #db8876;
+        background-color: $color1;
         padding: 10px;
         color: white;
         margin-bottom: 35px;
@@ -56,7 +56,7 @@
         position: absolute;
         right: -30px;
         top: -30px;
-        background-color: #db8876;
+        background-color: $color1;
         border-radius: 50px;
         padding: 10px;
         &:hover{

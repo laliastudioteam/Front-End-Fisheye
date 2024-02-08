@@ -36,7 +36,7 @@
     }
 
     &__geographic {
-        color: #901c1c;
+        color: $color2;
         transition: all 0.5s ease-in-out;
     }
 
@@ -59,57 +59,40 @@
     }
 
     &:hover {
-
         background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
-        box-shadow: 5px 5px 100px 5px #cccccc;
+        box-shadow: 5px 5px 100px 5px $color3;
         border-radius: 10px;
         transform: scale(1.05);
-
     }
-    
+
     &:hover & {
-
-    
-        background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
-        box-shadow: 5px 5px 100px 5px #cccccc;
-        border-radius: 10px;
-        transform: scale(1.05);
-    
-   
-     
-
         &__img {
-            box-shadow: 5px 5px 15px 5px #cccccc;
+            box-shadow: 5px 5px 15px 5px $color3;
             transform: scale(1.2) translateY(-20px);
-
         }
 
-            &__title {
-                transform: translateY(-20px) scale(1.1);
+        &__title {
+            transform: translateY(-20px) scale(1.1);
+        }
+
+        &__geographic {
+            transform: translateY(-20px) scale(1.2);
+        }
+
+        &__tagline {
+            transform: scale(1.3);
+
+            &:before {
+                content: "\00201D";
             }
-
-            &__geographic {
-                transform: translateY(-20px) scale(1.2);
+            &:after {
+                content: "\00201C";
             }
+        }
 
-            &__tagline {
-                transform: scale(1.3);
-
-               &:before {
-                    content: "\00201D";
-                }
-                &:after {
-                    content: "\00201C";
-                }
-
-            }
-
-            &__price {
-                transform: translateY(30px) scale(1.3);
-                border: 1px solid #cccccc;
-            }
-        
+        &__price {
+            transform: translateY(30px) scale(1.3);
+            border: 1px solid $color3;
+        }
     }
 }
-
-
