@@ -4,6 +4,8 @@
 let dataGlobalPhotographer = new Array();
 let dataGlobalPhotographerMedia = new Array();
 let indexMedia = 0;
+const limitLikeVote = 1;
+
 
 async function getPhotographers() {
 	// GO Fetch real user data
@@ -61,9 +63,9 @@ function getUrlParamValue(paramName) {
 function initLikeSystem(media) {
 	let likeButton = document.querySelectorAll(".card-media__body__likes__icon");
 	likeButton.forEach(heart => {
-		heart.addEventListener("click", () => {
+		heart.addEventListener("click", f=() => {
 			clickonlike(media, heart.id.substring(11));
-		});
+		}, { once: true });
 	});
 }
 

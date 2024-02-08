@@ -1,28 +1,4 @@
 @charset "UTF-8";
-/*Fichiers paramètres globaux*/
-body {
-  font-family: "DM Sans", sans-serif;
-  margin: 0;
-}
-
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 90px;
-}
-
-h1 {
-  color: #901C1C;
-  margin-right: 100px;
-}
-
-.logo {
-  height: 50px;
-  margin-left: 100px;
-}
-
 /*Fichiers utils*/
 /* Variables */
 .animation-fadeIn {
@@ -80,6 +56,30 @@ h1 {
     opacity: 1;
   }
 }
+/*Fichiers paramètres globaux*/
+body {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+h1 {
+  color: #901C1C;
+  margin-right: 100px;
+}
+
+.logo {
+  height: 50px;
+  margin-left: 100px;
+}
+
 /*Fichiers de composents*/
 /* Article */
 .photograph-article {
@@ -136,12 +136,6 @@ h1 {
   background-color: white;
 }
 .photograph-article:hover {
-  background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
-  box-shadow: 5px 5px 100px 5px #cccccc;
-  border-radius: 10px;
-  transform: scale(1.05);
-}
-.photograph-article:hover .photograph-article {
   background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
   box-shadow: 5px 5px 100px 5px #cccccc;
   border-radius: 10px;
@@ -479,6 +473,11 @@ h1 {
   margin-right: 1rem;
   color: white;
 }
+.select-custom-select__fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
 
 .select-custom-select[open] {
   z-index: 1;
@@ -520,6 +519,7 @@ h1 {
   transform: rotate(45deg) translate(50%, 0%);
   transform-origin: center center;
   transition: transform ease-in-out 100ms;
+  margin-top: -20px;
 }
 
 .select-radios:focus {
@@ -775,7 +775,7 @@ input[type=radio]:after {
   animation: heartbeat 1s ease-in-out forwards;
   transition: 0.2s;
 }
-.container-price__like__icon__animation__::after {
+.container-price__like__icon__animation::after {
   content: "+1";
   background: #db8876;
   padding: 5px;
