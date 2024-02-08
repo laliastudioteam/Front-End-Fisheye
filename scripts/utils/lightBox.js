@@ -1,22 +1,19 @@
 // Fonction Lightbox
 function lightboxSystem(media, id) {
-	console.log("Lancement de la lightbox");
-	const lightbox = document.querySelector(".lightbox");
-	const lightboxImg = document.querySelector(".lightbox-img");
-	const lightboxLegend = document.getElementById("legendPicture");
-	const lightboxVid = document.querySelector(".lightbox-vid");
-	const lightboxZoneVideo = document.querySelector(".lightbox-zone-video");
-	const lightboxVidSource = document.querySelector(".ligthbox-vid-source");
-	const lightboxVidLegend = document.getElementById("legendVideo");
-	const lightboxZoneImage = document.querySelector(".lightbox-zone-image");
-	const lengthMedia = media.length;
-	//console.log(lengthMedia);
-	let indexMedia = media.findIndex(s => s.id === Number(id));
-	//console.log("Index actuel : " + indexMedia);
-	//let mediaSelected = mediaList.filter(s => s.id === Number(id));
-	changePictureVideo();
 
-	//console.log(mediaSelected);
+	const lightbox = document.querySelector(".lightbox");
+    const lightboxZoneImage = document.querySelector(".lightbox__zone-image");
+	const lightboxImg = document.querySelector(".lightbox__zone-image__img");
+	const lightboxLegend = document.querySelector(".lightbox__zone-image__legend");
+	const lightboxVid = document.querySelector(".lightbox__zone-video__vid");
+	const lightboxZoneVideo = document.querySelector(".lightbox__zone-video");
+	const lightboxVidSource = document.querySelector(".lightbox__zone-video__vid__source");
+	const lightboxVidLegend = document.querySelector(".lightbox__zone-video__legend");
+	const lengthMedia = media.length;
+
+	let indexMedia = media.findIndex(s => s.id === Number(id));
+
+	changePictureVideo();
 
 	function closeLightboxSystem() {
 		const lightbox = document.querySelector(".lightbox");
@@ -24,7 +21,7 @@ function lightboxSystem(media, id) {
 	}
 
 	function prevPicture() {
-		console.log("prev");
+
 		indexMedia -= 1;
 		if (indexMedia < 0) {
 			indexMedia = lengthMedia - 1;
@@ -34,7 +31,7 @@ function lightboxSystem(media, id) {
 	}
 
 	function nextPicture() {
-		console.log("next");
+	
 		indexMedia += 1;
 		if (indexMedia >= lengthMedia) {
 			indexMedia = 0;
@@ -43,10 +40,10 @@ function lightboxSystem(media, id) {
 	}
 
 	function changePictureVideo() {
-		console.log("change image");
+
 
 		if (media[indexMedia].image === undefined) {
-			console.log("video");
+	
 			lightbox.style.display = "block";
 			lightboxZoneImage.style.display = "none";
 			lightboxZoneVideo.style.display = "flex";
@@ -64,7 +61,7 @@ function lightboxSystem(media, id) {
 			lightboxVid.load();
 			lightboxVid.play();
 		} else {
-			console.log("image");
+
 			lightbox.style.display = "block";
 			lightboxZoneVideo.style.display = "none";
 			lightboxZoneImage.style.display = "flex";
@@ -76,7 +73,7 @@ function lightboxSystem(media, id) {
 
 			lightboxImg.classList.add("animation-fadeOut");
 			void lightboxImg.offsetWidth;
-			console.log("fadeOut");
+
 			lightboxImg.setAttribute(
 				"src",
 				"assets/medias/" +
@@ -103,7 +100,7 @@ function lightboxSystem(media, id) {
 	});
 
 	// Init close system
-	const closeLightbox = document.querySelector(".lightbox-close-link");
+	const closeLightbox = document.querySelector(".lightbox__close__link");
 	closeLightbox.addEventListener("click", () => {
 		closeLightboxSystem();
 	});

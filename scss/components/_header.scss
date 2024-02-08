@@ -1,22 +1,21 @@
-
 /* Header */
 
 .container-header {
     justify-self: center;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     height: 300px;
     margin: 0 50px;
-    width:100%;
+    width: 100%;
 }
 
-@media screen AND (max-width: 780px){
+@media screen AND (max-width: 780px) {
     .container-header {
-height:450px;
+        height: 450px;
         flex-direction: column;
-       margin-bottom:70px;
+        margin-bottom: 70px;
     }
 }

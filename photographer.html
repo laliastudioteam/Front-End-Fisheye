@@ -16,10 +16,10 @@
 		<title>Fisheye - photographe</title>
 	</head>
 	<body>
-		<div id="contact_modal" role="dialog" aria-modal="true" aria-labelledby="modalDialogHeader" aria-describedby="modalDialogDescription">
+		<div id="contact_modal" role="dialog" aria-modal="true">
 			<div class="modal">
-				<header aria-label="Haut de la modal">
-					<h2>Contactez-moi</h2>
+				<header aria-label="Haut de la modal" class="modal__header" aria-label="modalDialogHeader">
+					<h2 class="modal__header__title">Contactez-moi</h2>
 					<img class="modal__picture" title="photographer picture" alt="photographer picture">
 					<img
 						src="assets/icons/close.svg"
@@ -76,26 +76,26 @@
 			</div>
 		</div>
 		<div class="lightbox" role="dialog" aria-label="Gallery">
-			<div class="lightbox-close lightbox-arrow-close-nav">
-				<a href="#" class="lightbox-close-link"   title="fermer" >
+			<div class="lightbox__close lightbox-arrow-close-nav">
+				<a href="#" class="lightbox__close__link"   title="fermer" >
 				<i class="fa-solid fa-xmark" aria-hidden="true" alt="Fermer" aria-label="Fermer"></i>
 			</a></div>
-			<div class="container-lightbox">
+			<div class="lightbox__container">
 			
-			<div class="lightbox-zone-left" id="prevPicture" aria-label="Précédent media" title="Précédent media">
+			<div class="lightbox__zone-left" id="prevPicture" aria-label="Précédent media" title="Précédent media">
 			  <i class="fa-solid fa-chevron-left" ></i>
 			</div>
-					<div class="lightbox-zone-image">
-						<img  class="lightbox-img" alt="" />
-						<div class="lightbox-legend" id="legendPicture"></div>
+					<div class="lightbox__zone-image">
+						<img  class="lightbox__zone-image__img" alt="" />
+						<div class="lightbox__zone-image__legend" id="legendPicture"></div>
 			</div>
-			<div class="lightbox-zone-video">
-				<video controls  class="lightbox-vid" alt="">
-					<source  type="video/mp4" class="ligthbox-vid-source"/>
+			<div class="lightbox__zone-video">
+				<video controls  class="lightbox__zone-video__vid" alt="">
+					<source  type="video/mp4" class="lightbox__zone-video__vid__source"/>
 				  </video>
-				<div class="lightbox-legend" id="legendVideo"></div>
+				<div class="lightbox__zone-video__legend" id="legendVideo"></div>
 	</div>
-			<div class="lightbox-zone-right " id="nextPicture" aria-label="Prochain media" title="Prochain media">
+			<div class="lightbox__zone-right " id="nextPicture" aria-label="Prochain media" title="Prochain media">
 			  <i class="fa-solid fa-chevron-right" ></i>
 			</div>
 					</div>

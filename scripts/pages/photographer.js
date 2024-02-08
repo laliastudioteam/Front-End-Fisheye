@@ -9,7 +9,6 @@ async function getPhotographers() {
 	// GO Fetch real user data
 	const reponse = await fetch("./data/photographers.json");
 	const photographers = await reponse.json();
-	//console.log(photographers);
 
 	return photographers;
 }
@@ -24,9 +23,9 @@ async function getPhotographerData(idPhotographer, photographerArray, type) {
 		let photographerMediaFilter = photographerArray.filter(
 			s => s.photographerId === Number(idPhotographer)
 		);
-		//console.log("media non classé :" + photographerMediaFilter);
+
 		photographerMediaFilter = sortMedia("popularite", photographerMediaFilter);
-		//console.log("test"+photographerMediaFilter);
+
 		return photographerMediaFilter;
 	}
 }
@@ -40,9 +39,9 @@ async function displayData(photographerData) {
 
 async function displayMedia(mediaData) {
 	let photographerMediaSection = document.querySelector(".photograph-media");
-	console.log("recreation de la zone media");
+
 	photographerMediaSection.innerHTML = "";
-	//console.log("avec ces donnees classees"+mediaData);
+
 	mediaData.forEach(mediaData => {
 		const photographerMediaModel = photographerMediatemplate(mediaData);
 		const userMediaDOM = photographerMediaModel.getUserMediaDOM();
@@ -71,9 +70,8 @@ function initLikeSystem(media) {
 // Fonction d'initalisation des ecouteurs sur les images
 function initLightboxSystem(media) {
 	let imageToClick = document.querySelectorAll(".card-media__lien");
-	//console.log(imageToClick);
+
 	imageToClick.forEach(image => {
-		console.log(imageToClick.id);
 		image.addEventListener("click", () => {
 			lightboxSystem(media, image.id.substring(15));
 		});
@@ -82,11 +80,10 @@ function initLightboxSystem(media) {
 
 // Fonction d'initialisation des filtres
 async function initFilters() {
-	//console.log("données data : "+dataGlobalPhotographerMedia);
+
 	const selectFilters = document.querySelectorAll(".selectFilterOption");
 
 	const getSelectedValue = e => {
-		//console.log(e.target.id);
 
 		sortMedia(e.target.id, dataGlobalPhotographerMedia);
 
@@ -103,7 +100,6 @@ async function initFilters() {
 		selectFilter.addEventListener("change", getSelectedValue);
 	});
 
-	console.log("Ecouteurs filtres ok");
 }
 
 
@@ -113,21 +109,18 @@ async function initFilters() {
 function sortMedia(type, arrayData) {
 	switch (type) {
 		case "popularite":
-			console.log("classement par popularité");
 			arrayData.sort(function (a, b) {
 				return parseFloat(a.likes) - parseFloat(b.likes);
 			});
 			return arrayData;
 			break;
 		case "date":
-			console.log("Classement par date");
 			arrayData.sort(function (a, b) {
 				return a.date.localeCompare(b.date);
 			});
 			return arrayData;
 			break;
 		case "titre":
-			console.log("classement par titre");
 			arrayData.sort(function (a, b) {
 				return a.title.localeCompare(b.title);
 			});

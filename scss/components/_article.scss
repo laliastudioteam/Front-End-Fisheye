@@ -1,6 +1,6 @@
 /* Article */
 
-.photographer_section article {
+.photograph-article {
     justify-self: center;
     display: flex;
     justify-content: center;
@@ -10,30 +10,15 @@
     min-width: 350px;
     transition: all 0.1s ease-in-out;
 
-    & a {
+    &__link {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         text-decoration: none;
     }
-    &:hover {
-        background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
-        box-shadow: 5px 5px 100px 5px #cccccc;
-        border-radius: 10px;
-        transform: scale(1.05);
 
-        & img {
-            box-shadow: 5px 5px 15px 5px #cccccc;
-            transform: scale(1.2) translateY(-20px);
-        }
-
-        &:hover h2 {
-            transform: translateY(-20px) scale(1.1);
-        }
-    }
-
-    & h2 {
+    &__title {
         color: #d3573c;
         font-size: 36px;
         font-weight: 400;
@@ -41,7 +26,7 @@
         transition: all 0.5s ease-in-out;
     }
 
-   & img {
+    &__img {
         height: 200px;
         width: 200px;
         object-fit: cover;
@@ -49,46 +34,82 @@
         border: 4px solid #ffffff;
         transition: all 0.5s ease-in-out;
     }
+
+    &__geographic {
+        color: #901c1c;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__tagline {
+        color: #000000;
+        font-weight: 400;
+        font-size: 14px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__price {
+        color: #757575;
+        font-weight: 400;
+        font-size: 12px;
+        transition: all 0.5s ease-in-out;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: white;
+    }
+
+    &:hover {
+
+        background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
+        box-shadow: 5px 5px 100px 5px #cccccc;
+        border-radius: 10px;
+        transform: scale(1.05);
+
+    }
+    
+    &:hover & {
+
+    
+        background-image: linear-gradient(to bottom, #ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3);
+        box-shadow: 5px 5px 100px 5px #cccccc;
+        border-radius: 10px;
+        transform: scale(1.05);
+    
+   
+     
+
+        &__img {
+            box-shadow: 5px 5px 15px 5px #cccccc;
+            transform: scale(1.2) translateY(-20px);
+
+        }
+
+            &__title {
+                transform: translateY(-20px) scale(1.1);
+            }
+
+            &__geographic {
+                transform: translateY(-20px) scale(1.2);
+            }
+
+            &__tagline {
+                transform: scale(1.3);
+
+               &:before {
+                    content: "\00201D";
+                }
+                &:after {
+                    content: "\00201C";
+                }
+
+            }
+
+            &__price {
+                transform: translateY(30px) scale(1.3);
+                border: 1px solid #cccccc;
+            }
+        
+    }
 }
 
-.photographer_section article .geographic {
-    color: #901c1c;
-    transition: all 0.5s ease-in-out;
-}
-.photographer_section article:hover .geographic {
-    transform: translateY(-20px) scale(1.2);
-}
 
-.photographer_section article .tagline {
-    color: #000000;
-    font-weight: 400;
-    font-size: 14px;
-    transition: all 0.5s ease-in-out;
-}
-
-.photographer_section article:hover .tagline {
-    transform: scale(1.3);
-}
-
-.photographer_section article:hover .tagline:before {
-    content: "\00201D";
-}
-.photographer_section article:hover .tagline:after {
-    content: "\00201C";
-}
-
-.photographer_section article .price {
-    color: #757575;
-    font-weight: 400;
-    font-size: 12px;
-    transition: all 0.5s ease-in-out;
-    border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: white;
-}
-
-.photographer_section article:hover .price {
-    transform: translateY(30px) scale(1.3);
-    border: 1px solid #cccccc;
-}

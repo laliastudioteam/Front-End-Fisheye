@@ -26,15 +26,14 @@ async function getPhotographers() {
 // GO Fetch real user data
 	const reponse = await fetch("./data/photographers.json");
 	const photographers = await reponse.json();
-	console.log(photographers);
 	return photographers;
 
 	// et bien retourner le tableau photographers seulement une fois récupéré
 }
 
 async function displayData(photographers) {
-    console.log(photographers);
-	const photographersSection = document.querySelector(".photographer_section");
+
+	const photographersSection = document.querySelector(".photographer-section");
 
 	photographers.forEach(photographer => {
 		const photographerModel = photographerTemplate(photographer);

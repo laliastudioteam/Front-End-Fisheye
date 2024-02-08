@@ -1,4 +1,3 @@
-
 /* Modal de formulaire */
 
 #contact_modal {
@@ -6,18 +5,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    position:fixed;
-    top:0px;
-    margin-left:auto;
-    margin-right:auto;
-    width:100%;
-    height:100vh;
+    position: fixed;
+    top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 9999;
 }
 
 .modal {
-    margin-top:20%;
+    margin-top: 20%;
     border-radius: 5px;
     background-color: #fafafa;
     width: 380px;
@@ -25,45 +24,43 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding:25px;
-    position:relative;
+    padding: 25px;
+    position: relative;
     margin: auto;
+    &__header {
+        justify-content: space-between;
+        width: 100%;
+        background-color: #db8876;
+        padding: 10px;
+        color: white;
+        margin-bottom: 35px;
+        &__title {
+            font-size: 24px;
+            font-weight: normal;
+            text-align: center;
+        }
+    }
+    &__picture {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border: 10px solid #fff;
+        border-radius: 100px;
+        margin-right: 20px;
+    }
+
+    &__close {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: -30px;
+        top: -30px;
+        background-color: #db8876;
+        border-radius: 50px;
+        padding: 10px;
+        &:hover{
+            transform:scale(1.2);
+        }
+    }
 }
-
-.modal header {
-    justify-content: space-between;
-    width: 100%;
-    background-color:#DB8876;
-    padding:10px;
-    color:white;
-    margin-bottom:35px;
-}
-
-.modal__picture{
-    width:150px;
-    height:150px;
-    object-fit: cover;
-    border:10px solid #fff;
-    border-radius:100px;
-    margin-right:20px;
-}
-.modal__close{
-    cursor: pointer;
-    width:30px;
-    height:30px;
-    position:absolute;
-  right:-30px;
-    top:-30px;
-    background-color:#DB8876;
-    border-radius:50px;
-    padding:10px;
-}
-
-.modal header h2 {
-    font-size:24px;
-    font-weight: normal;
-    text-align: center;
-}
-
-
-

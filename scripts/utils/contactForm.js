@@ -45,7 +45,6 @@ for (let errorMessageKey in errorAlerts) {
 			"change",
 			errorAlerts[errorMessageKey][1]
 		);
-		console.log("Ecouteur " + errorMessageKey + " actif");
 	}
 }
 
@@ -70,7 +69,6 @@ function hideErrorInput(inputToSet, field) {
 const expLetters = new RegExp(/\d+/g);
 
 function onlyLetters(stringTotest) {
-	//	console.log("test: " + stringTotest + " : " + expLetters.test(stringTotest))
 	let testVarNumber = expLetters.test(stringTotest);
 	return testVarNumber;
 }
@@ -162,10 +160,7 @@ function validate() {
 	if (errorForm == 0) {
     let donneesForm = {};
 
-	console.log("Valeurs:");
 	for (let inputId in checkById) {
-		
-
 
 		console.log("Valeur pour "+inputId+" est "+document.getElementById(inputId).value);
         donneesForm[inputId] = document.getElementById(inputId).value;

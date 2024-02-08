@@ -3,28 +3,28 @@ function photographerTemplate(data) {
 
 	const picture = `assets/photographers/${portrait}`;
 
-
-
-	console.log(picture);
-
 	function getUserCardDOM() {
 		const article = document.createElement("article");
+		article.classList.add("photograph-article");
 		const lien = document.createElement("a");
 		lien.setAttribute("href", "./photographer.html?id=" + id);
+		lien.classList.add("photograph-article__link");
 		const img = document.createElement("img");
+		img.classList.add("photograph-article__img");
 		img.setAttribute("src", picture);
 		img.setAttribute("alt", "Photo de "+name);
 		const h2 = document.createElement("h2");
+		h2.classList.add("photograph-article__title");
 		h2.textContent = name;
 		const geographicZone = document.createElement("span");
-		geographicZone.classList.add("geographic");
+		geographicZone.classList.add("photograph-article__geographic");
 		geographicZone.textContent = city + " , " + country;
 		const taglineZone = document.createElement("p");
 		taglineZone.textContent = tagline;
-		taglineZone.classList.add("tagline");
+		taglineZone.classList.add("photograph-article__tagline");
 		const priceZone = document.createElement("span");
 		priceZone.textContent = price + "€/jour";
-		priceZone.classList.add("price");
+		priceZone.classList.add("photograph-article__price");
 		article.appendChild(lien);
 		lien.appendChild(img);
 		lien.appendChild(h2);
@@ -89,8 +89,7 @@ function photographerUniqtemplate(data) {
 
 function photographerMediatemplate(data) {
 	const {date, id, photographerId, title, image, likes, price, video} = data;
-	console.log(data);
-	console.log(date, id, title, image, likes, price, video);
+
 	const picture = `assets/medias/${photographerId}/${image}`;
 
 	function getUserMediaDOM() {
