@@ -96,6 +96,7 @@ function lightboxSystem(media, id) {
 			nextPicture();
 		} else if (e.keyCode === 27) {
 			closeLightboxSystem();
+			closeModal();
 		}
 	});
 
