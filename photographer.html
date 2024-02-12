@@ -108,30 +108,33 @@
 			<div class="photograph-header"></div>
 			<div class="filter-zone">
 			<div class="filter-zone__title">Trier par :</div>
+			<div class="accessibility-filter">
+			<button class="accessibility-filter__button" aria-label="Choisissez un filtre">
+Popularité
+			</button>
+			<div class="accessibility-filter__choice-zone" style="display:none;">
+			<form class="accessibility-filter__choice-zone__form">
+			<ul class="accessibility-filter__choice-zone__form__list">
+				<li class="accessibility-filter__choice-zone__form__list__option">
 
-				<details class="select-custom-select">
-					<summary class="select-radios" >
-				<fieldset class="select-custom-select__fieldset">
-						<input type="radio" name="filter" id="popularite" title="Popularité" class="selectFilterOption" checked>
-					  <input type="radio" name="filter" id="date" title="Date" class="selectFilterOption">
-					  <input type="radio" name="filter" id="titre" title="Titre" class="selectFilterOption">
-					</fieldset>
-					</summary>
-					<ul class="select-list-select">
-					  <li>
-						<label class="select-label" for="popularite">
-						Popularité
-						  <span></span>
-						</label>
-					  </li>
-					  <li>
-						<label class="select-label" for="date">Date</label>
-					  </li>
-					  <li>
-						<label class="select-label" for="titre">Titre</label>
-					  </li>
-					</ul>
-				  </details>
+
+					<input type="radio" name="filter" id="popularite" title="Popularité" class="accessibility-filter__choice-zone__form__list__option__input" >
+					<label class="accessibility-filter__choice-zone__form__list__option__label" for="popularite">Popularité</label>
+				  </li>
+				  <li class="accessibility-filter__choice-zone__form__list__option">
+					<input type="radio" name="filter" id="date" title="Date" class="accessibility-filter__choice-zone__form__list__option__input">
+					<label class="accessibility-filter__choice-zone__form__list__option__label" for="date">Date</label>
+				  </li>
+				  <li class="accessibility-filter__choice-zone__form__list__option">
+					<input type="radio" name="filter" id="titre" title="Titre" class="accessibility-filter__choice-zone__form__list__option__input" checked>
+					<label class="accessibility-filter__choice-zone__form__list__option__label" for="titre">Titre</label>
+				  </li>
+				
+			</ul>
+			</form>
+		</div>
+	</div>
+			
 			</div>
 			<div class="container-media">
 				<div class="photograph-media"></div>

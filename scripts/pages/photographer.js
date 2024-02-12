@@ -6,7 +6,6 @@ let dataGlobalPhotographerMedia = new Array();
 let indexMedia = 0;
 const limitLikeVote = 1;
 
-
 async function getPhotographers() {
 	// GO Fetch real user data
 	const reponse = await fetch("./data/photographers.json");
@@ -63,9 +62,13 @@ function getUrlParamValue(paramName) {
 function initLikeSystem(media) {
 	let likeButton = document.querySelectorAll(".card-media__body__likes__icon");
 	likeButton.forEach(heart => {
-		heart.addEventListener("click", f=() => {
-			clickonlike(media, heart.id.substring(11));
-		}, { once: true });
+		heart.addEventListener(
+			"click",
+			(f = () => {
+				clickonlike(media, heart.id.substring(11));
+			}),
+			{once: true}
+		);
 	});
 }
 
@@ -80,10 +83,52 @@ function initLightboxSystem(media) {
 	});
 }
 
+const selectFilters = document.querySelectorAll(
+	".accessibility-filter__choice-zone__form__list__option__input"
+);
+const buttonFilters = document.querySelector(".accessibility-filter__button");
+const choiceZoneFilters = document.querySelector(
+	".accessibility-filter__choice-zone"
+);
+const radioFilter = document.querySelector("input[name=filter]:checked");
+const radioFilters = document.querySelectorAll(
+	".accessibility-filter__choice-zone__form__list__option__input"
+);
+
 // Fonction d'initialisation des filtres
 async function initFilters() {
 
-	const selectFilters = document.querySelectorAll(".selectFilterOption");
+	window.addEventListener('click', function(e){  
+
+		if (document.querySelector(".accessibility-filter").contains(e.target)){
+
+		} else{
+		  document.querySelector(".accessibility-filter__button").classList.remove("button-open");
+		  choiceZoneFilters.style.display = "none";
+		}
+	  });
+
+	  // detection de la touche entrée de clavier
+	document.addEventListener("keydown", function (e) {
+		 if (e.keyCode === 13) {
+		document.querySelector(".accessibility-filter__button").classList.remove("button-open");
+			choiceZoneFilters.style.display = "none";
+	}
+	});
+	buttonFilters.addEventListener("click", () => {
+
+		if (choiceZoneFilters.style.display == "none") {
+			choiceZoneFilters.style.display = "block";
+			radioFilter.focus();
+			document
+				.querySelector(".accessibility-filter__button")
+				.classList.add("button-open");
+		
+		} else {
+			document.querySelector(".accessibility-filter__button").classList.remove("button-open");
+			choiceZoneFilters.style.display = "none";
+		}
+	});
 
 	const getSelectedValue = e => {
 
@@ -100,29 +145,29 @@ async function initFilters() {
 
 	selectFilters.forEach(selectFilter => {
 		selectFilter.addEventListener("change", getSelectedValue);
+	
 	});
-
 }
-
-
-
 
 // Tri par filtre
 function sortMedia(type, arrayData) {
 	switch (type) {
 		case "popularite":
+			buttonFilters.textContent = "Popularité";
 			arrayData.sort(function (a, b) {
 				return parseFloat(a.likes) - parseFloat(b.likes);
 			});
 			return arrayData;
 			break;
 		case "date":
+			buttonFilters.textContent = "Date";
 			arrayData.sort(function (a, b) {
 				return a.date.localeCompare(b.date);
 			});
 			return arrayData;
 			break;
 		case "titre":
+			buttonFilters.textContent = "Titre";
 			arrayData.sort(function (a, b) {
 				return a.title.localeCompare(b.title);
 			});
@@ -132,8 +177,6 @@ function sortMedia(type, arrayData) {
 			console.log(`Aucun classement reconnu`);
 	}
 }
-
-
 
 // Function de mise a jour des clicks
 function clickonlike(photographerMedia, id) {
