@@ -95,9 +95,7 @@ function lightboxSystem(media, id) {
 		} else if (e.keyCode === 39) {
 			nextPicture();
 		} else if (e.keyCode === 27) {
-			console.log("fermer");
 			closeLightboxSystem();
-			closeModal();
 	} 
 	});
 

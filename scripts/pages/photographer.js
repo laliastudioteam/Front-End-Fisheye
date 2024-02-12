@@ -97,41 +97,43 @@ const radioFilters = document.querySelectorAll(
 
 // Fonction d'initialisation des filtres
 async function initFilters() {
-
-	window.addEventListener('click', function(e){  
-
-		if (document.querySelector(".accessibility-filter").contains(e.target)){
-
-		} else{
-		  document.querySelector(".accessibility-filter__button").classList.remove("button-open");
-		  choiceZoneFilters.style.display = "none";
-		}
-	  });
-
-	  // detection de la touche entrée de clavier
-	document.addEventListener("keydown", function (e) {
-		 if (e.keyCode === 13) {
-		document.querySelector(".accessibility-filter__button").classList.remove("button-open");
+	window.addEventListener("click", function (e) {
+		if (document.querySelector(".accessibility-filter").contains(e.target)) {
+		} else {
+			document
+				.querySelector(".accessibility-filter__button")
+				.classList.remove("button-open");
 			choiceZoneFilters.style.display = "none";
-	}
+		}
+	});
+
+	// detection de la touche entrée de clavier
+	document.addEventListener("keydown", function (e) {
+		if (e.keyCode === 13) {
+			document
+				.querySelector(".accessibility-filter__button")
+				.classList.remove("button-open");
+			choiceZoneFilters.style.display = "none";
+		} else if (e.keyCode === 27) {
+			closeModal();
+		}
 	});
 	buttonFilters.addEventListener("click", () => {
-
 		if (choiceZoneFilters.style.display == "none") {
 			choiceZoneFilters.style.display = "block";
 			radioFilter.focus();
 			document
 				.querySelector(".accessibility-filter__button")
 				.classList.add("button-open");
-		
 		} else {
-			document.querySelector(".accessibility-filter__button").classList.remove("button-open");
+			document
+				.querySelector(".accessibility-filter__button")
+				.classList.remove("button-open");
 			choiceZoneFilters.style.display = "none";
 		}
 	});
 
 	const getSelectedValue = e => {
-
 		sortMedia(e.target.id, dataGlobalPhotographerMedia);
 
 		displayMedia(dataGlobalPhotographerMedia);
@@ -145,7 +147,6 @@ async function initFilters() {
 
 	selectFilters.forEach(selectFilter => {
 		selectFilter.addEventListener("change", getSelectedValue);
-	
 	});
 }
 
